@@ -1,0 +1,24 @@
+/*****************************************
+BASE
+*****************************************/
+
+#slider {
+    width: 700px;
+    height: 480px;
+    overflow: hidden;
+}
+
+#slider .slides {
+    display: block;
+    height: 480px;
+    width: 3500px;
+    margin: 0;
+    padding: 0;
+}
+
+#slider .slide {
+    float: left;
+    list-style: none;
+    width: 700px;
+    height: 400px;
+}

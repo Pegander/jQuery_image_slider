@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <title>Image slider</title>
+    <link type="text/css" rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            //Variables for easy changes
+            var margin = 0;
+            //Total width of all images in slide
+            var stopMargin = -3500;
+            //How long to show each image
+            var sliderPause = 3000;
+            //The width of the individual images
+            var imageWidth = 700;
+            var animationSpeed = 1000;
+
+            var $slide = function() {
+                margin -= imageWidth;
+                //Check if last image is shown
+                if (margin > stopMargin) {
+                    $(".slides").animate({
+                        marginLeft: margin + "px",
+                    }, animationSpeed);
+                    //If last image return to start
+                } else {
+                    margin = 0;
+                    $(".slides").animate({
+                        marginLeft: "0px",
+                    }, animationSpeed);
+                };
+            };
+            setInterval($slide, sliderPause);
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="slider">
+        <ul class="slides">
+            <!- Insert src for slider images ->
+            <li class="slide"><img src="slide1.png" alt="Slide1"></li>
+            <li class="slide"><img src="slide2.png" alt="Slide2"></li>
+            <li class="slide"><img src="slide3.png" alt="Slide3"></li>
+            <li class="slide"><img src="slide4.png" alt="Slide4"></li>
+            <li class="slide"><img src="slide5.png" alt="Slide5"></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
